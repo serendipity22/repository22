@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>国家代码查询</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			
+			{{country}}
+			<input type="text" v-model="userNumber" name="" id="" value="" />
+			<div v-for="country in countries">
+				<div v-if="userNumber==country.code">
+				国家名称为：{{country.name}}<br />
+				国家首都为：{{country.capital}}<br />
+				国家代码为：{{country.code}}<br />
+				</div>
+			</div>
+			<br />
+			
+		</div>
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					userNumber:'1',
+					countries:[
+						{name:"中国",capital:"北京",code:"86"},
+						{name:"美国",capital:"华盛顿",code:"001"},
+						{name:"俄罗斯",capital:"莫斯科",code:"007"},
+						{name:"英国",capital:"伦敦",code:"44"},
+						{name:"韩国",capital:"首尔",code:"82"}
+					]
+				}
+			})
+		</script>
+	</body>
+</html>

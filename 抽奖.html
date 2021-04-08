@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			
+			{{chooseUser}}
+			<input type="button" @click="rdm=Math.ceil(Math.random()*10+1)%3;chooseUser=users[rdm]" name="" id="" value="anniu" />
+			<div v-for="user in user">
+			</div>
+		
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					rdm:'',
+					chooseUser:'',
+					users:[
+						{name:"Daming",phone:"14563"},
+						{name:"Lingling",phone:"12358"},
+						{name:"Lihua",phone:"57863"},
+						{name:"Tom",phone:"25556"},
+						{name:"Amy",phone:"00172"},
+					]
+				}
+			})
+		</script>
+	</body>
+</html>
