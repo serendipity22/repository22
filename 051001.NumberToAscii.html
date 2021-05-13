@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>猜数字游戏</title>
+		<script src="js/vue.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="userkey" @keydown.enter="show()" name="" id="" value="" />
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:"#app",
+				data:{
+					userkey:""
+				},
+				methods:{
+					show(){
+						alert(this.userkey.charCodeAt());
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

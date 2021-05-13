@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+ <head>
+ <meta charset="UTF-8">
+ <title>vue组件猜数字游戏</title>
+ <script src="js/vue.js" type="text/javascript" charset="UTF-8"></script>
+
+</head>
+<body>
+	<center>
+		<h2 style="text-align: center;">猜数字小游戏</h2>
+		<p>请输入0-10之间的数字，并按下回车键！</p>
+		<div id="app">
+			<input type="text" v-model="key" @keyup.enter="show()" /><br>
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					key:'',
+					number:Math.ceil(Math.random()*10)
+				},
+				methods:{
+					show(){
+						if(v.key==v.number){
+							alert("恭喜您猜对了!");
+						}
+						else if(v.key>v.number){
+							alert("猜大了!");
+						}
+						else if(v.key<v.number){
+							alert("猜小了!");
+						}
+					}
+				}
+			})
+			
+		</script>
+		</center>
+	</body>
+</html>
